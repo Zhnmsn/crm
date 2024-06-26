@@ -1,0 +1,238 @@
+.container-max {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.cms__section {
+    max-width: 1300px;
+}
+.cms__menu {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 79px;
+    margin-bottom: 30px;
+    position: relative;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cms__menu::after  {
+    position: absolute;
+    content: "";
+    width: 1100px;
+    height: 1px;
+    background: rgb(198, 194, 222);
+    bottom: -7px;
+    left: 0;
+}
+.form__foot-doll {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 0px;
+    color: rgb(109, 91, 208);
+}
+.cms__text {
+    color: rgb(110, 104, 147);
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 10%;
+}
+.cms__text-m {
+    font-size: 18px;
+    color: rgb(37, 33, 59);
+}
+
+.cms__settings {
+    padding-top: 6px;
+    background-color: white;
+    padding-bottom: 15px;
+    max-width: 1060px;
+    margin: 0 auto;
+    
+}
+.cms__search::placeholder {
+    color: rgb(110, 104, 147);
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    padding-left: 40px;
+}
+
+.cms__input::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/Shape_Search.svg");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    left: 10px;
+    
+}
+.cms__input {
+    display: inline-block;
+    position: relative;
+}
+.cms__filter {
+    margin-right: 30px;
+    border: 1px solid rgb(198, 194, 222);
+    border-radius: 6px;
+    width: 108px;
+    height: 40px;
+    background-color: white;
+    color: rgb(37, 33, 59);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    
+}
+
+.cms__add-button {
+    background: rgb(109, 91, 208);
+    color: rgb(255, 255, 255);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: 0%;
+    border-radius: 6px;
+    text-transform: uppercase;
+    width: 181px;
+    height: 39px;
+    border: none;
+    float: right;
+}
+
+.table__btn {
+    background-color: white;
+    border: none;
+}
+.table__body {
+    background-color: white;
+    
+}
+.table__body tr {
+    height: 60px;
+}
+.table__number {
+    width: 78px;
+}
+.table__about {
+    width: 295px;
+}
+.table__about-m {
+    width: 160px;
+}
+.cms__search {
+    width: 392px;
+    height: 40px;
+    background: rgb(244, 242, 255);
+    border-radius: 6px;
+    border: none;
+}
+.table__thead {
+    height: 45px;
+}
+.table__cms {
+    width: 1100px;
+    background: rgb(244, 242, 255);
+}
+.table__number, .table__about, .table__about-m, .table__amount,
+.table__amount-m, .table__price, .table__all-price {
+    padding-left: 15px;
+    color: rgb(37, 33, 59);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    text-align: center;
+}
+.thead__td {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(110, 104, 147);
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 5%;
+}
+.cms__wrapper {
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    background: rgb(255, 255, 255);
+    padding-top: 10px;
+}
+
+.footer__text {
+    display: inline-block;
+    color: rgb(110, 104, 147);
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 5%;
+    padding-top: 15px;
+
+}
+.footer__text-items {
+    display: inline-block;
+    color: rgb(110, 104, 147);
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 5%;
+    padding-top: 15px;
+}
+.footer__select {
+    border: none;
+    color: rgb(110, 104, 147);
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 5%;
+    background-color: rgb(244, 242, 255);
+}
+.cms__footer{
+    height: 45px;
+    background: rgb(244, 242, 255);
+}
+.footer__btn {
+    border: none;
+}
+.cms__footer {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 30px;
+    padding-right: 20px;
+}
+.cms-table__wrapper {
+    overflow-x: auto
+}
+.table__cms {
+    min-width: 520px;
+}
+@media(max-width:720px) {
+    .cms__search {
+        width: 252px;
+    }
+    .cms__add-button {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 15px;
+        letter-spacing: 0%;
+        border-radius: 6px;
+        text-transform: uppercase;
+        width: 120px;
+    }
+    .cms__search::placeholder {
+        font-size: 10px;
+        
+    }
+}

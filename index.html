@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Oswald:wght@600&family=Raleway:ital@0;1&display=swap" rel="stylesheet">
+    <title> add goods</title>
+</head>
+<body>
+    <section class="form__section">
+        <button class="section__close-button" type="button"> <img src="img/close.svg" alt="close-button"> </button> 
+    <div class="container">
+        
+    <form class="form" action="https://jsonplaceholder.typicode.com/posts" method="post">
+        
+        <fieldset class="form__car">
+            
+    <legend class="form__title"> Добавить товар  </legend>
+    <legend class="form__title-m"> Изменить товар  <span class="title-m"> id: 201910241</span> </legend>
+    <div class="form__card"> 
+                <div class="form__label-1"> <label class=" form__label"> Наименование <input type="text">  </label> </div>
+                <div class="form__label-2"> <label class="form__label"> Категория <input type="text">  </label></div>
+                <div class="form__label-3"> <label class="form__label"> Еденицы измерения <input type="text">  </label></div>
+                <div class="form__label-4">   <label class="form__label"> Дисконт  <input class="discount_checkbox" type="checkbox" name="discount" value="discount"> 
+                        <input class="discount_text" type="text">  </label>          </div>            
+                        <div class="form__label-5"><label class=" form__label"> Описание  <textarea class="description"> </textarea> </label></div>
+                        <div class="form__label-6"><label class="form__label" >Количество <input type="number" name="amount">  </label></div>
+                        <div class="form__label-7">  <label class="form__label"> Цена <input type="number" name="price">  </label></div>
+                        <div class="form__label-12"> <p class="form__mini-text"> Изображение не должно превышать размер 1 Мб</p> </div>
+                        <div class="form__label-8"> <label class="for__btn"><input class="form__button-add" type="file"> <span class="top">Добавить изображение </span> </label> </div>
+                        <div class="form__label-13"> <div class="overlay">  <img class="form__items" src="img/items.png" alt="items"></div> </div>
+        </fieldset> </div>
+        <div class="form__foot"> 
+        <p class="form__foot-text"> Итоговая стоимость:<span class="form__foot-dollars">  $ 900.00 </span> </p>
+        <button class="form__button" type="submit"> Добавить товар</button></div>
+    </form>
+            <div class="modal-window">  
+                <div class="modal-window__one"><img class="close-one" alt="close-icon" src="img/close.svg"> </div>
+                <div class="modal-window__three"> </div>
+                <div class="modal-window__two"> <p class="modal-window__text"> Что-то пошло не так</p> </div>
+            </div>
+    </div>
+</section>
+</body>
+</html>

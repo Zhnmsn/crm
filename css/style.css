@@ -1,0 +1,376 @@
+
+fieldset {
+    margin: 0;
+    
+    border-radius: 8px;
+    border: transparent;
+}
+.form__section {
+    max-width: 792px;
+}
+.form__label{
+    display: block;
+    color: #6E6893;
+}
+
+.form__car {
+    padding-right: 0px;
+}
+label {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+}
+
+.container {
+    max-width: 580px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.form__card {
+    width: 580px;
+    height: auto;  
+    margin: 0 auto;  
+    position: relative;
+    background-color: white;
+    padding-left: 25px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+
+
+.form__title{
+    margin: 0;
+    padding: 40px 0;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    color: #6E6893;
+    width: 572px;
+    isplay: none;
+}
+
+
+.form__title-m {
+    display: flex;
+    justify-content: space-between;
+    width: 572px;
+    padding: 40px 0;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6E6893;
+    display: none;
+}
+
+
+
+.form__card::after {
+    position: absolute;
+    content: "";
+    width: 580px;
+    height: 1px;
+    background: rgb(198, 194, 222);
+    top: -21px;
+    left: 0;
+}
+
+.form__button, .form__button-add {
+    font-size: 16px;
+    text-transform: uppercase;
+    float: right;
+    border-radius: 6px;
+    background-color: #6D5BD0;
+    border-color: transparent;
+    font-weight: 600;
+    color: white;
+    height: 39px;
+    width: 200px;
+}
+.form__button-add {
+    width: 250px;
+}
+
+.form__card {
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 250px) ;
+    grid-template-rows: repeat(5, 60px), repeat(autofill, 260px);
+    column-gap: 24px;
+    row-gap: 12px;
+    grid-template-areas: 
+    "name about"
+    "category about"
+    "units amount"
+    "discount price"
+    "text image"
+    "items items";
+    
+}
+.form__label-1 {
+    grid-area: name;
+}
+.form__label-2 {
+    grid-area: category;
+}
+.form__label-3 {
+    grid-area: units;
+}
+.form__label-4 {
+    grid-area: discount;
+}
+.form__label-5 {
+    grid-area: about;
+}
+.form__label-6 {
+    grid-area: amount;
+}
+.form__label-7 {
+    grid-area: price;
+}
+.form__label-8 {
+    grid-area: image;
+    padding-top: 20px;
+}
+.form__label-9 {
+    grid-area: button;
+}
+.form__label-12 {
+    grid-area: text;
+    padding-top: 20px;
+    display: none;
+}
+.form__items {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.form__label-13 {
+    grid-area: items;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    display: none;
+}
+
+.form__label-13::after {
+    content: "";
+    position: absolute;
+    background: url("../img/trash.svg");
+    background-repeat: no-repeat;
+    display: block;
+    width: 23px;
+    height: 30px;
+    top: 41%;
+    left: 45%;
+    z-index: 2;
+}
+.overlay::after {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.form__mini-text {
+    color: rgb(216, 1, 1);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 10%;
+    text-align: center;
+}
+
+.form__foot {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 720px;
+    margin: 0 auto;
+    padding-left: 30px;
+}
+.form__foot-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(110, 104, 147);
+}
+.form__foot-dollars {
+    color: rgb(109, 91, 208);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+
+.form__label input {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    width: 250px;
+    border-radius: 6px;
+    background-color: #F4F2FF;
+    border: transparent;
+    margin-top: 10px;
+}
+
+.form__label textarea  {
+    background-color: #F4F2FF;
+    border-style: none; 
+    border-color: Transparent; 
+    overflow: auto; 
+    resize: none;
+    border-radius: 6px;
+    width: 250px;
+    height: 112px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.form__card input {
+    margin-bottom: 10px;
+}
+
+
+.form__label .discount_text {
+    height: 40px;
+    width: 200px;
+    float: right;
+}
+
+.form__label .discount_checkbox {
+    background-color: #F4F2FF;
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+
+
+input[type='checkbox']:checked {
+    background-image: url("../img/icons_check.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input[type='checkbox']{
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    width: 80px;
+    height: 80px;
+    appearance:none;
+    border-radius:6px;
+}
+
+.modal-window {
+    width: 350px;
+    height: 350px;
+    border: 1px dashed rgba(0, 0, 0, 0.25);
+    background: rgb(242, 240, 249);
+    position: absolute;
+    top: 139px;
+    left: 206px;
+    display: none;
+    
+}
+.modal-window__three {
+    border: 1px dashed rgba(0, 0, 0, 0.25);
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    margin-bottom: 33px;
+    position: relative;
+}
+.modal-window__one {
+    width: 350px;
+    margin-bottom: 61px;
+    text-align: end;
+}
+.close-one {
+    padding-right: 29px;
+    padding-top: 26px;
+}
+
+.modal-window__text {
+    color: rgb(110, 104, 147);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 10%;
+    text-align: center;
+    text-transform: uppercase;
+}
+.modal-window__three::after, .modal-window__three::before {
+    position: absolute;
+    content: "";
+    width: 125px;
+    height: 3px;
+    background: rgb(216, 1, 1);
+    top: 50%;
+    left: -20%;
+}
+.modal-window__three::after {
+    transform: rotate(45deg);
+}
+.modal-window__three::before {
+    transform: rotate(-45deg);
+}
+
+.for__btn input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+.top {
+    font-size: 16px;
+    text-transform: uppercase;
+    float: right;
+    border-radius: 6px;
+    background-color: #6D5BD0;
+    border-color: transparent;
+    font-weight: 600;
+    color: white;
+    height: 39px;
+    width: 250px;
+    cursor: pointer;
+    padding-top: 11px;
+    padding-left:14px ;
+}
+.section__close-button {
+    float: right;
+    border: none;
+    padding-top: 20px;
+    padding-right: 20px;
+    background-color: rgb(242, 240, 249);
+}
+.title-m {
+    color: rgb(197, 197, 197);
+    font-family: Inter;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: 0%;
+}
+form__section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+}
