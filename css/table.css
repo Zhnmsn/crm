@@ -4,6 +4,8 @@
 }
 .cms__section {
     max-width: 1300px;
+    margin: 0 auto;
+    isplay: none;
 }
 .cms__menu {
     display: flex;
@@ -48,7 +50,8 @@
     padding-top: 6px;
     background-color: white;
     padding-bottom: 15px;
-    max-width: 1060px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin: 0 auto;
     
 }
@@ -75,6 +78,7 @@
 .cms__input {
     display: inline-block;
     position: relative;
+    
 }
 .cms__filter {
     margin-right: 30px;
@@ -88,7 +92,18 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
-    
+    position: relative;
+    padding-left: 40px;
+}
+.cms__filter::before {
+    content: "";
+    position: absolute;
+    background-image: url("../img/Shape_Filter.svg");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    left: 10px;
 }
 
 .cms__add-button {
@@ -104,7 +119,7 @@
     width: 181px;
     height: 39px;
     border: none;
-    float: right;
+    
 }
 
 .table__btn {
@@ -113,8 +128,9 @@
 }
 .table__body {
     background-color: white;
+    }
     
-}
+
 .table__body tr {
     height: 60px;
 }
@@ -122,10 +138,47 @@
     width: 78px;
 }
 .table__about {
-    width: 295px;
+    width: 290px;
 }
 .table__about-m {
     width: 160px;
+}
+.table__amount {
+    width: 62px;
+    text-align: center;
+}
+.table__amount-m {
+    width: 91px;
+    text-align: center;
+}
+.table__price, .table__all-price {
+    width: 80px;
+    text-align: end;
+}
+.table__all-btn {
+    padding-left: 50px;
+}
+
+.table__all-btn1 {
+    padding-left: 0px;
+}
+.all-btn2, .all-btn3 {
+    width: 70px;
+    padding: 0;
+    padding-left: 15px;
+}
+.thead__price, .thead__all-price {
+    text-align: end;
+}
+
+
+table{
+    border-collapse: collapse;
+}
+td {
+    border-bottom: 1px solid rgb(217, 213, 236);
+    
+    vertical-align: middle;
 }
 .cms__search {
     width: 392px;
@@ -133,6 +186,7 @@
     background: rgb(244, 242, 255);
     border-radius: 6px;
     border: none;
+    margin-right: 350px;
 }
 .table__thead {
     height: 45px;
@@ -143,16 +197,17 @@
 }
 .table__number, .table__about, .table__about-m, .table__amount,
 .table__amount-m, .table__price, .table__all-price {
-    padding-left: 15px;
     color: rgb(37, 33, 59);
     font-family: Inter;
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
-    text-align: center;
+    padding-left: 15px;
 }
+
+
 .thead__td {
-    text-align: center;
+    padding-left: 15px;
     text-transform: uppercase;
     color: rgb(110, 104, 147);
     font-family: Inter;
@@ -160,6 +215,9 @@
     font-weight: 600;
     line-height: 15px;
     letter-spacing: 5%;
+}
+.thead__amount {
+    padding-left: 12px;
 }
 .cms__wrapper {
     border-radius: 8px;
@@ -211,6 +269,7 @@
     justify-content: flex-end;
     column-gap: 30px;
     padding-right: 20px;
+    border-radius: 8px;
 }
 .cms-table__wrapper {
     overflow-x: auto

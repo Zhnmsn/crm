@@ -1,12 +1,14 @@
 
 fieldset {
     margin: 0;
-    
     border-radius: 8px;
     border: transparent;
 }
 .form__section {
     max-width: 792px;
+    position: relative;
+    margin: 0 auto;
+    display: none;
 }
 .form__label{
     display: block;
@@ -44,7 +46,8 @@ label {
 
 .form__title{
     margin: 0;
-    padding: 40px 0;
+    padding-top: 30px;
+    padding-bottom: 40px;
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
@@ -60,7 +63,8 @@ label {
     display: flex;
     justify-content: space-between;
     width: 572px;
-    padding: 40px 0;
+    padding-top: 30px;
+    padding-bottom: 40px;
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
@@ -143,39 +147,45 @@ label {
 .form__label-12 {
     grid-area: text;
     padding-top: 20px;
-    display: none;
+    isplay: none;
 }
 .form__items {
     width: 200px;
     height: 200px;
     position: relative;
 }
+.overlay {
+    position: relative;
+}
+
 .form__label-13 {
     grid-area: items;
     justify-self: center;
     align-self: center;
     position: relative;
-    display: none;
+    isplay: none;
+}
+.form__items-btn {
+    width: 30px;
+    height: 40px;
+    visibility: hidden;
+    z-index: 100;
+    position: absolute;
+    top: 40%;
+    right: 83px;
+    border: none;
+    background-color: transparent;
+}
+.overlay:hover .form__items-btn {
+    visibility: visible;
 }
 
-.form__label-13::after {
+.overlay:hover::after {
     content: "";
-    position: absolute;
-    background: url("../img/trash.svg");
-    background-repeat: no-repeat;
-    display: block;
-    width: 23px;
-    height: 30px;
-    top: 41%;
-    left: 45%;
-    z-index: 2;
-}
-.overlay::after {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
-    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -194,9 +204,9 @@ label {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 720px;
+    width: 630px;
     margin: 0 auto;
-    padding-left: 30px;
+    
 }
 .form__foot-text {
     font-size: 14px;
@@ -349,12 +359,21 @@ input[type='checkbox']{
     padding-top: 11px;
     padding-left:14px ;
 }
+
+.section__close-button::after {
+    position: absolute;
+    content: "";
+    background-image: url("../img/close.svg");
+    background-repeat: no-repeat;
+    display: block;
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    right: 0px;
+    
+}
 .section__close-button {
-    float: right;
     border: none;
-    padding-top: 20px;
-    padding-right: 20px;
-    background-color: rgb(242, 240, 249);
 }
 .title-m {
     color: rgb(197, 197, 197);
