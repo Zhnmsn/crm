@@ -10,6 +10,11 @@ fieldset {
     margin: 0 auto;
     display: none;
 }
+
+.form__section_display {
+    display: flex;
+}
+
 .form__label{
     display: block;
     color: #6E6893;
@@ -55,7 +60,7 @@ label {
     justify-content: space-between;
     color: #6E6893;
     width: 572px;
-    isplay: none;
+    display: none;
 }
 
 
@@ -69,7 +74,7 @@ label {
     font-weight: 700;
     text-transform: uppercase;
     color: #6E6893;
-    display: none;
+    isplay: none;
 }
 
 
@@ -360,7 +365,7 @@ input[type='checkbox']{
     padding-left:14px ;
 }
 
-.section__close-button::after {
+.section__close-button {
     position: absolute;
     content: "";
     background-image: url("../img/close.svg");
@@ -374,6 +379,7 @@ input[type='checkbox']{
 }
 .section__close-button {
     border: none;
+    
 }
 .title-m {
     color: rgb(197, 197, 197);

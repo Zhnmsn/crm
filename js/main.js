@@ -31,3 +31,13 @@ console.log('Общая стоимость мониторов:', allPriceScreen,
 
 const allPrice = allPricePersonalComputer + allPriceLaptop + allPriceScreen;
 console.log('Общая стоимость товара:', allPrice, '$');
+
+
+const addTitle = document.querySelector('.form__title');
+const editTitle = document.querySelector('.form__title-m');
+const idNumbers = document.querySelector('.title-m');
+const closeButon = document.querySelector('.section__close-button');
+const form = document.querySelector('.form');
+const checkbox = document.querySelector('.discount_checkbox');
+const discountText = document.querySelector('.discount_text');
+const totalSum = document.querySelector('.form__foot-dollars');
