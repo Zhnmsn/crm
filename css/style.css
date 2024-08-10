@@ -11,7 +11,7 @@ fieldset {
     display: none;
 }
 
-.form__section_display {
+form__section_display {
     display: flex;
 }
 
@@ -74,7 +74,7 @@ label {
     font-weight: 700;
     text-transform: uppercase;
     color: #6E6893;
-    isplay: none;
+    display: none;
 }
 
 
