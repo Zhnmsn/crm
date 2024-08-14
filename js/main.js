@@ -1,6 +1,15 @@
 'use strict'
 
 import getPageElements from './modules/pageElement.js';
+import {InitialValue} from './modules/goods.js';
+import renderGoods from './modules/builder.js';
 
-const elements = getPageElements();
-console.log(`elements`, elements.forn);
+const init = () => {
+    const elements = getPageElements();
+    const data = InitialValue;
+    renderGoods(data);
+    console.log('elements', elements);
+    console.log('data', data);
+}
+
+init();

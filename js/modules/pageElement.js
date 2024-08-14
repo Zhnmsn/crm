@@ -1,4 +1,3 @@
-"use strict"
 
 const getPageElements = () => {
     const addTitle = document.querySelector('.form__title');
