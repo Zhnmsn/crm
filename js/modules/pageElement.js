@@ -8,6 +8,7 @@ const getPageElements = () => {
     const checkbox = document.querySelector('.discount_checkbox');
     const discountText = document.querySelector('.discount_text');
     const totalSum = document.querySelector('.form__foot-dollars');
+    const list = document.querySelector('.table__body');
     return {
         addTitle,
         editTitle,
@@ -17,6 +18,7 @@ const getPageElements = () => {
         checkbox,
         discountText,
         totalSum,
+        list,
     };
 };
 

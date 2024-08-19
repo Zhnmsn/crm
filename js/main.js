@@ -7,7 +7,7 @@ import renderGoods from './modules/builder.js';
 const init = () => {
     const elements = getPageElements();
     const data = InitialValue;
-    renderGoods(data);
+    renderGoods(data, elements);
     console.log('elements', elements);
     console.log('data', data);
 }

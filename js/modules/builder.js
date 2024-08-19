@@ -1,10 +1,12 @@
 
 
-const createRow = (id, title, category, count, units, price, sum, btn1, btn2, btn3 ) => {
+const createRow = ({id, title, category, count, units, price, sum, btn1, btn2, btn3} ) => {
     
     const tBody = document.querySelector('tbody');
         
     const tr = document.createElement('tr');
+    tr.dataset.tdId = 'trRowID';
+    console.log(tr.dataset);
     tBody.append(tr);
     
     const tdTitle = document.createElement('td');
@@ -53,11 +55,11 @@ const createRow = (id, title, category, count, units, price, sum, btn1, btn2, bt
 }
 
 
-    const renderGoods =(item, data) => {
-        const newMap = data.map(createRow);
-            item.append(...newMap); 
-            return newMap;
-        
+    const renderGoods =(data, elements) => {
+        const outputTable = elements.list;
+                data.map(item => {
+                outputTable.append(createRow(item))
+            })
     };
 
     export default renderGoods;
