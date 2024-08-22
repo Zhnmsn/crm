@@ -5,8 +5,13 @@
 .cms__section {
     max-width: 1300px;
     margin: 0 auto;
-    isplay: none;
+    
 }
+
+.cms__section.is-hidden {
+    display: none;
+}
+
 .cms__menu {
     display: flex;
     justify-content: space-between;

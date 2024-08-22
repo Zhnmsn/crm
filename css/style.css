@@ -4,16 +4,42 @@ fieldset {
     border-radius: 8px;
     border: transparent;
 }
+
+
+.form__section.is-visible {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.4);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+}
+
 .form__section {
-    max-width: 792px;
     position: relative;
     margin: 0 auto;
     display: none;
+    z-index: 1;
 }
 
-form__section_display {
-    display: flex;
-}
+.cms__section.form-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    
+    }
+
+
 
 .form__label{
     display: block;
@@ -60,7 +86,7 @@ label {
     justify-content: space-between;
     color: #6E6893;
     width: 572px;
-    display: none;
+    isplay: none;
 }
 
 
@@ -152,7 +178,7 @@ label {
 .form__label-12 {
     grid-area: text;
     padding-top: 20px;
-    isplay: none;
+    display: none;
 }
 .form__items {
     width: 200px;
@@ -168,7 +194,7 @@ label {
     justify-self: center;
     align-self: center;
     position: relative;
-    isplay: none;
+    display: none;
 }
 .form__items-btn {
     width: 30px;
@@ -296,8 +322,9 @@ input[type='checkbox']{
     top: 139px;
     left: 206px;
     display: none;
-    
 }
+    
+
 .modal-window__three {
     border: 1px dashed rgba(0, 0, 0, 0.25);
     width: 90px;
@@ -371,11 +398,11 @@ input[type='checkbox']{
     background-image: url("../img/close.svg");
     background-repeat: no-repeat;
     display: block;
-    width: 70px;
-    height: 70px;
+    width: 30px;
+    height: 25px;
     top: 10px;
-    right: 0px;
-    
+    right: 270px;
+    background-color: transparent;
 }
 .section__close-button {
     border: none;
@@ -388,14 +415,4 @@ input[type='checkbox']{
     font-weight: 600;
     line-height: 12px;
     letter-spacing: 0%;
-}
-form__section::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); 
-    z-index: 1;
 }
