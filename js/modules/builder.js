@@ -49,7 +49,7 @@ const createRow = ({id, title, category, count, units, price, sum, btn1, btn2, b
     tdBtn3.textContent = btn3;
     tdBtn3.classList.add('table__all-btn');
     
-    tr.append(tdId, tdTitle, tdCategory, tdCount, tdUnits, tdPrice, tdSum, tdBtn1, tdBtn2, tdBtn3);
+    tr.append(tdId, tdTitle, tdCategory, tdUnits, tdCount, tdPrice, tdSum, tdBtn1, tdBtn2, tdBtn3);
 
     return tr;
 }

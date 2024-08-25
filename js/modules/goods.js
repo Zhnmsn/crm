@@ -6,8 +6,8 @@ export const InitialValue = [
         "description": "Смартфон Xiaomi 11T – это представитель флагманской линейки, выпущенной во второй половине 2021 года. И он полностью соответствует такому позиционированию, предоставляя своим обладателям возможность пользоваться отличными камерами, ни в чем себя не ограничивать при запуске игр и других требовательных приложений.",
         "category": "mobile-phone",
         "discont": false,
-        "count": 3,
         "units": "шт",
+        "count": 3,
         "images": {
             "small": "img/smrtxiaomi11t-m.jpg",
             "big": "img/smrtxiaomi11t-b.jpg"
@@ -20,8 +20,8 @@ export const InitialValue = [
         "description": "Внедорожник на дистанционном управлении. Скорость 25км/ч. Возраст 7 - 14 лет",
         "category": "toys",
         "discont": 5,
-        "count": 1,
         "units": "шт",
+        "count": 1,
         "images": {
             "small": "img/cheetancar-m.jpg",
             "big": "img/cheetancar-b.jpg"
