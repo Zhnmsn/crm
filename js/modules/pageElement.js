@@ -27,5 +27,20 @@ const getPageElements = () => {
         clearForm,
     };
 };
-
 export default getPageElements;
+
+import {closeModal, openModal} from "./modalControls.js";
+
+export const pageControls = (elements) => {
+    const {addButton, form, closeButon} = elements;
+    addButton.addEventListener('click',  () => {
+        openModal(elements);
+    });
+    form.addEventListener('click', e => {
+        const target = e.target;
+        if(target === form || target === closeButon) {
+            closeModal(elements);
+        };
+    });
+
+};
