@@ -12,6 +12,8 @@ const getPageElements = () => {
     const totalSum = document.querySelector('.form__foot-dollars');
     const list = document.querySelector('.table__body');
     const clearForm = document.querySelector('.form');
+    const delBtn = document.querySelector('.all-btn3');
+    const cont = document.querySelector('.contact');
     return {
         addTitle,
         editTitle,
@@ -25,22 +27,9 @@ const getPageElements = () => {
         totalSum,
         list,
         clearForm,
+        delBtn,
+        cont,
     };
 };
 export default getPageElements;
 
-import {closeModal, openModal} from "./modalControls.js";
-
-export const pageControls = (elements) => {
-    const {addButton, form, closeButon} = elements;
-    addButton.addEventListener('click',  () => {
-        openModal(elements);
-    });
-    form.addEventListener('click', e => {
-        const target = e.target;
-        if(target === form || target === closeButon) {
-            closeModal(elements);
-        };
-    });
-
-};

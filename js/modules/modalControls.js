@@ -1,3 +1,4 @@
+
 export const openModal = ({form}) => {
     form.classList.add('is-visible');
 };
@@ -6,24 +7,34 @@ export const closeModal = ({form}) => {
     form.classList.remove('is-visible');
 };
 
+
+
+
+export const pageControls = (elements) => {
+    const {addButton, form, closeButon, table} = elements;
     
- //const clickList = (elements) => {
-    //const listBody = document.querySelector('body');
+    addButton.addEventListener('click',  () => {
+        openModal(elements);
+    });
+    form.addEventListener('click', e => {
+        const target = e.target;
+        if(target === form || target === closeButon) {
+            closeModal(elements);
+        };
+    });
 
-   // table.addEventListener('click', e => {
-   //     console.log(e.target);
-  //      if(e.target.closest('.cms__add-button')) {
- //           elements.form.classList.add('is-visible');
- //       }  
-        
- //       if(e.target.closest('.section__close-button') || e.target.closest('.form__section') ) {
- //               elements.form.classList.remove('is-visible');
-//        }     
- //   });
+    table.addEventListener('click', e => {
+        const target = e.target;
+        if(target.closest('.delete-img')) {
+            target.closest('.contact').remove();
+            
+            };
+    });  
+    
+    
 
-//};
+};
 
 
-//export default clickList;
 
 

@@ -25,6 +25,8 @@ img, svg {
 
 button {
     cursor: pointer;
+    border: transparent;
+    background-color: transparent;
 }
 
 a {

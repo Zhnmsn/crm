@@ -1,12 +1,21 @@
+import { InitialValue } from "./goods.js";
+const data = InitialValue;
 
 
-const createRow = ({id, title, category, count, units, price, sum, btn1, btn2, btn3} ) => {
+export const createRow = ({id, title, category, count, units, price, sum} ) => {
     
     const tBody = document.querySelector('tbody');
         
     const tr = document.createElement('tr');
-    tr.dataset.tdId = 'trRowID';
-    console.log(tr.dataset);
+    tr.classList.add('contact');
+    tr.addEventListener('click', () => {
+        const rowIn = tr.rowIndex;
+        if(rowIn === 1) {
+            data.splice(0,1);
+        } if(rowIn === 2) {
+            data.splice(1,1);
+        } console.log(data);
+    });    
     tBody.append(tr);
     
     const tdTitle = document.createElement('td');
@@ -35,25 +44,37 @@ const createRow = ({id, title, category, count, units, price, sum, btn1, btn2, b
 
     const tdSum = document.createElement('td');
     tdSum.textContent = sum;
-    tdSum.classList.add('thead__all-price');
+    tdSum.classList.add('table__all-price');
 
-    const tdBtn1= document.createElement('td');
-    tdBtn1.textContent = btn1;
-    tdBtn1.classList.add('table__all-btn');
+    const tdBtnImg= document.createElement('td');
+    let btnNew = document.createElement('button');
+    let img1 = document.createElement('img');
+    img1.src = "img/no-picture.svg";
+    btnNew.append(img1);
+    tdBtnImg.append(btnNew);
+    tdBtnImg.classList.add('table__all-btn');
 
-    const tdBtn2 = document.createElement('td');
-    tdBtn2.textContent = btn2;
-    tdBtn2.classList.add('table__all-btn');
-
-    const tdBtn3 = document.createElement('td');
-    tdBtn3.textContent = btn3;
-    tdBtn3.classList.add('table__all-btn');
+    const tdBtnEdit = document.createElement('td');
+    let btnNew2 = document.createElement('button');
+    let img2 = document.createElement('img');
+    img2.src = "img/edit-svg.svg";
+    btnNew2.append(img2);
+    tdBtnEdit.append(btnNew2);
+    tdBtnEdit.classList.add('all-btn2');
     
-    tr.append(tdId, tdTitle, tdCategory, tdUnits, tdCount, tdPrice, tdSum, tdBtn1, tdBtn2, tdBtn3);
+    const tdBtnDel = document.createElement('td');
+    let btnNew3 = document.createElement('button');
+    let img3 = document.createElement('img');
+    img3.src = "img/trash-svg-table.svg";
+    img3.classList.add('delete-img');
+    btnNew3.append(img3);
+    tdBtnDel.append(btnNew3);
+    tdBtnDel.classList.add('all-btn3');
+        
+    tr.append(tdId, tdTitle, tdCategory, tdUnits, tdCount, tdPrice, tdSum, tdBtnImg, tdBtnEdit, tdBtnDel);
 
     return tr;
 }
-
 
     const renderGoods =(data, elements) => {
         const outputTable = elements.list;
