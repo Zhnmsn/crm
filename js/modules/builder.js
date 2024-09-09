@@ -2,7 +2,9 @@ import { InitialValue } from "./goods.js";
 const data = InitialValue;
 
 
-export const createRow = ({id, title, category, count, units, price, sum} ) => {
+
+    
+export const createRow = ({id, title, category, count, units, price, sum } ) => {
     
     const tBody = document.querySelector('tbody');
         
@@ -44,7 +46,10 @@ export const createRow = ({id, title, category, count, units, price, sum} ) => {
 
     const tdSum = document.createElement('td');
     tdSum.textContent = sum;
+    
     tdSum.classList.add('table__all-price');
+
+    
 
     const tdBtnImg= document.createElement('td');
     let btnNew = document.createElement('button');
@@ -84,3 +89,5 @@ export const createRow = ({id, title, category, count, units, price, sum} ) => {
     };
 
     export default renderGoods;
+
+    
