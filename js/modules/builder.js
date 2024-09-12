@@ -1,7 +1,6 @@
 import { InitialValue } from "./goods.js";
+
 const data = InitialValue;
-
-
 
     
 export const createRow = ({id, title, category, count, units, price, sum } ) => {
@@ -10,16 +9,16 @@ export const createRow = ({id, title, category, count, units, price, sum } ) => 
         
     const tr = document.createElement('tr');
     tr.classList.add('contact');
-    tr.addEventListener('click', () => {
+    tr.addEventListener('click', () => {  //при клике - если ряд
         const rowIn = tr.rowIndex;
         if(rowIn === 1) {
-            data.splice(0,1);
+            data.splice(0,1);  //  удалить 1 эелемент начиная с нулевого (0)
         } if(rowIn === 2) {
-            data.splice(1,1);
-        } console.log(data);
+            data.splice(1,1);  // удалить один элемент начиная с 1го (со второго)
+        } console.log(data, tr.rowIndex);
     });    
     tBody.append(tr);
-    
+        
     const tdTitle = document.createElement('td');
     tdTitle.textContent = title;
     tdTitle.classList.add('table__about');
@@ -48,7 +47,6 @@ export const createRow = ({id, title, category, count, units, price, sum } ) => 
     tdSum.textContent = sum;
     
     tdSum.classList.add('table__all-price');
-
     
 
     const tdBtnImg= document.createElement('td');
@@ -82,7 +80,7 @@ export const createRow = ({id, title, category, count, units, price, sum } ) => 
 }
 
     const renderGoods =(data, elements) => {
-        const outputTable = elements.list;
+        const outputTable = elements.list; 
                 data.map(item => {
                 outputTable.append(createRow(item))
             })
