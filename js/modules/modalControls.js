@@ -12,39 +12,37 @@ export const openModal = ({form}) => {
 export const closeModal = ({form}) => {
     form.classList.remove('is-visible');
 };
+let allSum = 0;
 
+
+
+    
 export const pageControls = (elements) => {
-    const {addButton, form, closeButon, table, checkbox, 
-        discountText, inputPrice, inputCount, totalSum} = elements;
+    const {addButton, form, closeButon, table, checkbox,  
+        discountText, inputPrice, totalSumTable,
+        inputCount,  clearForm, totalSum} = elements;
             
     addButton.addEventListener('click',  () => {
         openModal(elements);
     });
+
     form.addEventListener('click', e => {
         const target = e.target;
-        if(target === form || target === closeButon) {
-            closeModal(elements);
+        if(target === form || target === closeButon ) {
+                clearForm.reset();
+                closeModal(elements);
         };
     });
 
-    table.addEventListener('click', e => {  // удаление строки c классом contact - если кликнуть на класс delete-img
-        const target = e.target;
-        if(target.closest('.delete-img')) {
-            target.closest('.contact').remove();
-            
-            };
-    });  
+     
     
     checkbox.addEventListener('change', e => {    // при деактивации чекбокса - очищение поля дискаунт
-            if (discountText.disabled = !e.target.checked) {  
+            if (discountText.disabled = !e.target.checked ) {  
                     discountText.value = '';
-            }; 
+                };    
+            });
             
-        });
-
-        let allSum = 0;
-
-        inputPrice.addEventListener('blur', e => {  // изменение общей цены по потери фокуса
+        inputPrice.addEventListener('blur', () => {  // изменение общей цены по потери фокуса
             if(discountText.value > 0) {
                 allSum = inputPrice.value * inputCount.value - (inputPrice.value * inputCount.value * (elements.discountText.value / 100));
             } if (discountText.value <= 0) {
@@ -54,7 +52,7 @@ export const pageControls = (elements) => {
             return allSum;
         });
 
-        discountText.addEventListener('blur', e => {  // изменение общей цены по потери фокуса
+        discountText.addEventListener('blur', () => {  // изменение общей цены по потери фокуса
             if(discountText.value > 0) {
                 allSum = inputPrice.value * inputCount.value - (inputPrice.value * inputCount.value * (elements.discountText.value / 100));
             } if (discountText.value <= 0) {
@@ -64,9 +62,20 @@ export const pageControls = (elements) => {
             } 
             totalSum.textContent = allSum;
             return allSum;
-        })
+        });
+
+        checkbox.addEventListener('click', () => {
+            if(discountText.value > 0) {
+                allSum = inputPrice.value * inputCount.value - (inputPrice.value * inputCount.value * (elements.discountText.value / 100));
+            } if (discountText.value <= 0) {
+                allSum = inputPrice.value * inputCount.value ;
+            }if(!checkbox.checked) {
+                allSum = inputPrice.value * inputCount.value;
+                totalSum.textContent = allSum;
+            } return allSum;
+        });
         
-        inputCount.addEventListener('blur', e => {  // изменение общей цены по потери фокуса
+        inputCount.addEventListener('blur', () => {  // изменение общей цены по потери фокуса
             if(discountText.value > 0) {
                 allSum = inputPrice.value * inputCount.value - (inputPrice.value * inputCount.value * (elements.discountText.value / 100));
             } if (discountText.value <= 0) {
@@ -111,6 +120,22 @@ const addPage = (item, table) => {    // добавление товара (ст
     table.append(createRow(item));
 };
 
+const calcAllSum = (data) => {   // перерасчет общей суммы таблички
+    const getNewSum = getNewArr(data).reduce((acc, cur) => {
+        acc= acc + cur;
+        return acc ;
+});
+    elements.totalSumTable.textContent = getNewSum; 
+};
+
+elements.table.addEventListener('click', e => {  // удаление строки c классом contact - если кликнуть на класс delete-img
+    const target = e.target;
+    if(target.closest('.delete-img') && elements.totalSum.textContent ) {
+        target.closest('.contact').remove(); 
+        calcAllSum(data);
+    };  
+});  
+    
 export const formControl = (form) => {
     form.addEventListener('submit', e => {
         e.preventDefault();
@@ -119,20 +144,16 @@ export const formControl = (form) => {
         const newContact = Object.fromEntries(formData);
         newContact.sum = newTdSum(elements);
         
-        addItems(newContact);
+        addItems(newContact);  
         addPage(newContact, tBody);
         
         getNewArr(data);  // сумма всех элементов массива
-        const getNewSum = getNewArr(data).reduce((acc, cur) => {
-            acc= acc + cur;
-            return acc ;
+        calcAllSum(data); // пересчет общей суммы таблички
+            
+        elements.clearForm.reset();
+        elements.totalSum.textContent = 0;
+        closeModal({form});
     });
-    
-        elements.totalSumTable.textContent = getNewSum;   // присвоим графе сумма в таблице значение
-                
-       // form.reset();
-       //closeModal(form);
-});
 };
 
 

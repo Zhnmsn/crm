@@ -17,6 +17,10 @@ const getPageElements = () => {
     const cont = document.querySelector('.contact');
     const inputPrice = document.querySelector('.input-price'); 
     const inputCount = document.querySelector('.input-count');
+    const inputDescription = document.querySelector('.input-description');
+    const inputUnits = document.querySelector('.input-units');
+    const inputCategory = document.querySelector('.input-category');
+    const inputName = document.querySelector('.input-name');
     const tdAllPrice = document.querySelector('.table__all-price');
     const tPrice = document.querySelector('.table__price');
     const tCount = document.querySelector('.table__amount');
@@ -40,6 +44,10 @@ const getPageElements = () => {
         cont,
         inputPrice,
         inputCount,
+        inputDescription,
+        inputUnits,
+        inputCategory,
+        inputName,
         tdAllPrice,
     };
 };

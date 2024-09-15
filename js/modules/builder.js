@@ -11,11 +11,12 @@ export const createRow = ({id, title, category, count, units, price, sum } ) => 
     tr.classList.add('contact');
     tr.addEventListener('click', () => {  //при клике - если ряд
         const rowIn = tr.rowIndex;
-        if(rowIn === 1) {
-            data.splice(0,1);  //  удалить 1 эелемент начиная с нулевого (0)
-        } if(rowIn === 2) {
-            data.splice(1,1);  // удалить один элемент начиная с 1го (со второго)
-        } console.log(data, tr.rowIndex);
+        for(let i = 0; i<= data.length; i++) {
+            if(rowIn === i+1) {
+                data.splice(i,1);  //  удалить 1 эелемент начиная с нулевого (0)
+            } 
+        }
+        
     });    
     tBody.append(tr);
         
